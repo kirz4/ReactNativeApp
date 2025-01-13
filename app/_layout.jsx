@@ -28,11 +28,22 @@ const RootLayout = () => {
 
   return (
     <Stack>
-      {/* Define o título da tela principal */}
       <Stack.Screen
         name="index" 
         options={{headerShown: false}} // O nome do arquivo index.jsx
       />
+      <Stack.Screen
+        name="(auth)" 
+        options={{headerShown: false}} // O nome do arquivo index.jsx
+      />
+      <Stack.Screen
+        name="(tabs)" 
+        options={{headerShown: false}} // O nome do arquivo index.jsx
+      />
+      {/* <Stack.Screen
+        name="/search/[query]" 
+        options={{headerShown: false}} // O nome do arquivo index.jsx
+      /> */}
     </Stack>
   );
 }

@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+mode: "jit",
 module.exports = {
   content: [
     "./app/**/*.{js,jsx,ts,tsx}", // Inclua os caminhos dos seus arquivos de componentes
@@ -38,3 +39,4 @@ module.exports = {
   },
   plugins: [], // Mantendo os plugins vazios por enquanto
 };
+

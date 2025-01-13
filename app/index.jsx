@@ -9,12 +9,7 @@ import Test from "../components/test"
 import { images } from "../constants";
 
 export default function Index() {
-  const logoStyle = {
-    width: 130,
-    height: 200,
-    marginTop: -20,
-    marginBottom: -40, // Reduz a distância abaixo da logo
-  };
+
   const cardsStyle = {
     maxWidth: 380, // Corresponde a max-w-[380px]
     width: "100%", // Corresponde a w-full
@@ -38,8 +33,8 @@ export default function Index() {
 >
           <Image
             source={images.logo}
-            style={logoStyle} // Estilos aplicados diretamente
             resizeMode="contain"
+            className="w-[130px] h-[160px]"
           />
           <Image
           source={images.cards}
@@ -57,9 +52,9 @@ export default function Index() {
             resizeMode="contain"
             />
           </View>
-          <Text className="text-sm mt-10 text-center"
+          <Text className="text-sm mt-10 text-center "
             style={{
-              marginTop: 32, // Corresponde a mt-8
+              // marginTop: 32,  Corresponde a mt-8
               color: "#CDCDE0",}}>
                 Where creativity meets innovation: embark on journey of limitless exploration with Aora
           </Text>
@@ -68,6 +63,7 @@ export default function Index() {
           handlePress={() => router.push('/sign-in')}
           containerStyles="w-full mt-8"
           />
+
         </View>
       </ScrollView>
       <StatusBar backgroundColor="#161622" style="light"/>
