@@ -15,19 +15,16 @@ const SignIn = () => {
   })
   const [isSubmitting, setisSubmitting] = useState(false)
   const submit = async () => {
-    console.log('Submit function called');
     if (!form.email || !form.password) {
         Alert.alert('Error', 'Please fill in all the fields');
         return;
     }
-    console.log('Submitting form:', form);
     setisSubmitting(true);
     try {
         // Tenta buscar a sessão atual
         let session;
         try {
             session = await account.getSession('current');
-            console.log('Current session found:', session);
         } catch (error) {
             if (error.message.includes('missing scope')) {
                 console.log('No active session. Creating a new one...');
@@ -39,12 +36,10 @@ const SignIn = () => {
         // Se não há sessão ativa, cria uma nova
         if (!session) {
             session = await signIn(form.email, form.password);
-            console.log('New session created:', session);
         }
 
         router.replace('/home'); // Redireciona para a página inicial
     } catch (error) {
-        console.error('Error during sign in:', error.message);
         Alert.alert('Error', error.message);
         setisSubmitting(false);
     }
