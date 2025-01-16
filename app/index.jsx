@@ -7,9 +7,11 @@ import { Redirect, router} from 'expo-router'
 import Test from "../components/test"
 
 import { images } from "../constants";
+import { useGlobalContext } from "../context/GlobalProvider";
 
-export default function Index() {
-
+export default function App() {
+  const {isLoading, isLoggedIn } = useGlobalContext
+  if(!isLoading && isLoggedIn ) return <Redirect href="/home"/>
   const cardsStyle = {
     maxWidth: 380, // Corresponde a max-w-[380px]
     width: "100%", // Corresponde a w-full

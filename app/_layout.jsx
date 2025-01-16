@@ -2,6 +2,7 @@ import { SplashScreen, Stack } from "expo-router";
 import "../global.css"; // Importa o arquivo de estilo global do TailwindCSS
 import { useFonts } from 'expo-font'
 import { useEffect } from "react";
+import GlobalProvider from '../context/GlobalProvider'
 
 SplashScreen.preventAutoHideAsync();
 
@@ -27,24 +28,26 @@ const RootLayout = () => {
   if(!fontsLoaded && !error) return null;
 
   return (
-    <Stack>
-      <Stack.Screen
-        name="index" 
-        options={{headerShown: false}} // O nome do arquivo index.jsx
-      />
-      <Stack.Screen
-        name="(auth)" 
-        options={{headerShown: false}} // O nome do arquivo index.jsx
-      />
-      <Stack.Screen
-        name="(tabs)" 
-        options={{headerShown: false}} // O nome do arquivo index.jsx
-      />
-      {/* <Stack.Screen
-        name="/search/[query]" 
-        options={{headerShown: false}} // O nome do arquivo index.jsx
-      /> */}
-    </Stack>
+    <GlobalProvider>
+      <Stack>
+        <Stack.Screen
+          name="index" 
+          options={{headerShown: false}} // O nome do arquivo index.jsx
+        />
+        <Stack.Screen
+          name="(auth)" 
+          options={{headerShown: false}} // O nome do arquivo index.jsx
+        />
+        <Stack.Screen
+          name="(tabs)" 
+          options={{headerShown: false}} // O nome do arquivo index.jsx
+        />
+        {/* <Stack.Screen
+          name="/search/[query]" 
+          options={{headerShown: false}} // O nome do arquivo index.jsx
+        /> */}
+      </Stack>
+    </GlobalProvider>
   );
 }
 export default RootLayout
