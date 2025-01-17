@@ -43,7 +43,7 @@ const SignUp = () => {
             style={{width: 115, height: 35, marginBottom:14}}
             />
 
-            <Text className="text-2xl text-white text-semibold mt-10 font-psemibold">Sign up to Aora</Text>
+            <Text className="text-2xl text-white text-semibold mt-10 font-psemibold">Sign up to Aora!</Text>
             <FormField
             title="Username"
             value={form.username}
